@@ -13,8 +13,9 @@
     <button id="invoke">Invoke</button>
 
     <script>
+        const name = document.getElementById("name");
         document.getElementById("invoke").addEventListener('click', async () => {
-            const res = await fetch('/api/Greet?name=' + document.getElementById("name").value);
+            const res = await fetch('/api/Greet?name=' + name.value);
             if (res.status === 200) {
                 document.getElementById("output").innerText = await res.text();
             } else {
